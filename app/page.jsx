@@ -14,7 +14,7 @@ export default function Beranda() {
       <header className="kepala">
         <NavAtas />
         <h1>Pilih tool untuk kontenmu</h1>
-        <p>Mulai dari lead magnet dan riset, lalu buka cabang konten yang mau kamu kerjakan.</p>
+        <p>Mulai dari riset, lalu buka cabang konten yang mau kamu kerjakan.</p>
       </header>
       <DaftarCabang cabang={cabang} />
     </>

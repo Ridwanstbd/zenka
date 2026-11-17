@@ -255,6 +255,17 @@ export default function FormAlat({ tool }) {
       )}
       <main className="alat">
         <form onSubmit={(e) => e.preventDefault()}>
+          {(tool.sorotan || []).filter(terlihat).map((s) => (
+            <div className="sorotan" role="note" key={s.judul}>
+              <strong>{s.judul}</strong>
+              <p>{s.teks}</p>
+              {s.poin && (
+                <ul>
+                  {s.poin.map((x) => <li key={x}>{x}</li>)}
+                </ul>
+              )}
+            </div>
+          ))}
           {tool.bagian.map((b) => (
             <fieldset key={b.legenda}>
               <legend>{b.legenda}</legend>
