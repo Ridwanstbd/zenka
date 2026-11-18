@@ -24,6 +24,17 @@ function gabungTersimpan(tool, dasar, tersimpan) {
 }
 
 function Kolom({ k, nilai, ubah }) {
+  if (k.jenis === "info" && k.poin) {
+    return (
+      <div className="sorotan dalam" role="note">
+        <strong>{k.label}</strong>
+        {k.bantuan && <p>{k.bantuan}</p>}
+        <ol>
+          {k.poin.map((x) => <li key={x}>{x}</li>)}
+        </ol>
+      </div>
+    );
+  }
   if (k.jenis === "info") {
     return (
       <label>
