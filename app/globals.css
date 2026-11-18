@@ -341,8 +341,10 @@ input[type="number"] {
   font-weight: 800;
 }
 .sorotan p { margin: 0; }
-.sorotan ul { margin: 8px 0 0; padding-left: 20px; }
+.sorotan ul,
+.sorotan ol { margin: 8px 0 0; padding-left: 20px; }
 .sorotan li + li { margin-top: 4px; }
+.sorotan.dalam { margin: 12px 0 0; font-size: 14px; }
 .alur {
   max-width: 1200px;
   margin: 0 auto;
