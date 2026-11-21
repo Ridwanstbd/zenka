@@ -345,6 +345,33 @@ input[type="number"] {
 .sorotan ol { margin: 8px 0 0; padding-left: 20px; }
 .sorotan li + li { margin-top: 4px; }
 .sorotan.dalam { margin: 12px 0 0; font-size: 14px; }
+/* Kotak keterangan netral (jenis "panduan"), mis. penjelasan fase channel */
+.panduan {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--accent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--panel));
+  font-size: 14px;
+}
+.panduan strong { display: block; font-size: 15px; margin-bottom: 4px; }
+.panduan p { margin: 0; }
+.panduan table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.panduan th,
+.panduan td { padding: 6px 8px; border-bottom: 1px solid var(--line); text-align: right; }
+.panduan th[scope="row"],
+.panduan thead th:first-child { text-align: left; }
+.panduan thead th { font-size: 12px; font-weight: 600; color: var(--mute); }
+.panduan tbody tr:last-child > * { border-bottom: 0; }
+.panduan dl { display: grid; gap: 10px; margin: 12px 0 0; }
+.panduan dt { font-weight: 600; }
+.panduan dd { margin: 2px 0 0; color: var(--ink); }
 .alur {
   max-width: 1200px;
   margin: 0 auto;

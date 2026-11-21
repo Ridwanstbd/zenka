@@ -23,7 +23,44 @@ function gabungTersimpan(tool, dasar, tersimpan) {
   return hasil;
 }
 
+function Panduan({ k }) {
+  return (
+    <div className="panduan" role="note">
+      <strong>{k.label}</strong>
+      {k.bantuan && <p>{k.bantuan}</p>}
+      {k.tabel && (
+        <table>
+          <thead>
+            <tr>
+              {k.tabel.kepala.map((h) => <th key={h} scope="col">{h}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {k.tabel.baris.map(([judul, ...sel]) => (
+              <tr key={judul}>
+                <th scope="row">{judul}</th>
+                {sel.map((x, i) => <td key={i}>{x}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+      {k.poin && (
+        <dl>
+          {k.poin.map((x) => (
+            <div key={x.judul}>
+              <dt>{x.judul}</dt>
+              <dd>{x.teks}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </div>
+  );
+}
+
 function Kolom({ k, nilai, ubah }) {
+  if (k.jenis === "panduan") return <Panduan k={k} />;
   if (k.jenis === "info" && k.poin) {
     return (
       <div className="sorotan dalam" role="note">
