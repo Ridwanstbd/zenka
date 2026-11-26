@@ -6,7 +6,9 @@ export default function Beranda() {
   // Kirim ke browser hanya data yang dibutuhkan daftar, bukan konfigurasi form.
   const cabang = CABANG.map((c) => ({
     ...c,
-    tools: TOOLS.filter((t) => t.cabang === c.id).map(({ slug, judul, ringkas, siap }) => ({ slug, judul, ringkas, siap })),
+    tools: TOOLS.filter((t) => t.cabang === c.id).map(
+      ({ slug, judul, ringkas, siap }) => ({ slug, judul, ringkas, siap }),
+    ),
   })).filter((c) => c.tools.length);
 
   return (
